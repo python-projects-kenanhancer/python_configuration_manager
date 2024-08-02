@@ -1,0 +1,2 @@
+class AwsConfigError(Exception):
+    pass
