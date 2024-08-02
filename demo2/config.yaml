@@ -1,0 +1,24 @@
+database:
+  main:
+    url: "postgres://user:password@localhost/dbname"
+    timeout: 30
+    replicas:
+      - "replica1.db.local"
+      - "replica2.db.local"
+      - "replica3.db.local"
+  backup:
+    url: "postgres://user:password@localhost/backup_db"
+    timeout: 60
+
+api:
+  keys:
+    service1: "key1"
+    service2: "key2"
+  endpoints:
+    - path: "/service1"
+      timeout: 15
+    - path: "/service2"
+      timeout: 30
+  rate_limits:
+    user: 1000
+    admin: 5000
